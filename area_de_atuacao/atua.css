@@ -1,0 +1,313 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.navback{
+    background-color: rgb(133, 131, 131);
+    height: 7rem;
+}
+
+.navbar{
+    min-height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.navmenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    z-index: 2;
+    margin-right: 10%;
+}
+
+.logotop{
+    margin-left: 10%;
+}
+
+.logotop img{
+    width: 10rem;
+    height: 4rem;
+}
+
+.nav-link{
+    transition: 0.7s ease-in-out;
+    font-size: 1.2rem;
+    color: aliceblue;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: black;
+}
+
+.Hamburguer{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3 ease-in-out;
+    transition: all 0.3 ease-in-out;
+    background-color: rgb(22, 30, 36);
+}
+
+.nav-item{
+    list-style: none;
+}
+
+.back{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.into{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.into h2{
+    font-size: 2.5rem;
+}
+
+.into br{
+    display: none;
+}
+
+.into h3{
+    margin-top: 4rem;
+    width: 80%;
+    text-align: justify;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.enfe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.barra{
+    border: 2px gray solid;
+    background-color: gray;
+    width: 12rem;
+    height: 1px;
+    border-radius: 3rem;
+}
+
+.bola{
+    border: 2px gray solid;
+    background-color: gray;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    margin: 10px;
+}
+
+.areas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.areas h2{
+   width: 85%;
+   font-size: 2rem;
+   margin-top: 25px;
+}
+
+.areas ul{
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+}
+
+.areas li{
+    list-style: none;
+    font-size: 1.2rem;
+    text-align: justify;
+    padding: 8;
+}
+
+.into2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.into2 h3{
+    margin-top: 3rem;
+    width: 80%;
+    text-align: justify;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+
+footer{
+    margin-top: 5rem;
+    background-color: gray;
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer h2{
+    font-size: 1.2rem;
+    font-weight: 300;
+    width: 20%;
+    color: aliceblue;
+}
+
+.redesFoo{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.redesFoo a{
+    padding: 8px;
+    text-decoration: none;
+    color: aliceblue;
+    transition: 0.5s ease;
+}
+
+.redesFoo a:hover{
+    color: black;
+}
+
+.redesFoo i{
+    margin-right: 8px;
+}
+
+
+footer li{
+    color: aliceblue;
+    list-style: none;
+    padding: 8px;
+}
+
+
+
+
+
+@media(max-width:768px){
+    .Hamburguer{
+        display: block;
+    }
+
+    .Hamburguer.active .bar:nth-child(2){
+        opacity: 0;
+
+    }
+
+    .Hamburguer.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+
+    }
+    
+    .Hamburguer.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+
+    }
+
+    .navmenu{
+        position: absolute;
+        right: -100%;
+        top: 110px;
+        gap: 0;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(2px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        margin-right: 0;
+        display: none;
+        z-index: 3;
+
+    }
+
+    .navmenu.active{
+        display: flex;
+    }
+
+    .nav-item{
+        margin: 16px 0;
+    
+    }
+
+    .nav-item a{
+        color: black;
+    }
+
+    .navmenu.active{
+        right: 0;
+    }
+
+    .barra{
+        width: 8rem;
+    }
+
+    .into h2{
+        font-size: 2rem;
+    }
+
+    .into br{
+        display: block;
+    }
+
+    .areas h2{
+        font-size: 1.5rem;
+    }
+
+    footer{
+        flex-direction: column;
+        height: 30rem;
+    }
+
+    footer h2{
+        width: 60%;
+    }
+
+    .redesFoo{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .redesFoo a{
+        padding: 25px;
+    }
+}

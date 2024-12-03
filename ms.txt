@@ -1,0 +1,83 @@
+Imagine um defensor incansável, um guardião dos direitos individuais, um estrategista jurídico. Este é o advogado criminal. Sua missão é complexa e crucial: garantir que cada indivíduo, mesmo diante das acusações mais graves, tenha um julgamento justo e tenha seus direitos constitucionais respeitados.
+
+Mas o que faz um advogado criminal no dia a dia? Ele é o escudo legal de seus clientes, analisando minuciosamente os casos, construindo defesas sólidas, argumentando em juízo e buscando sempre a melhor solução para cada situação. Seu trabalho vai muito além de defender a inocência: ele luta por justiça, por igualdade e pelo cumprimento da lei.
+
+Por que a presença de um advogado criminal é tão importante? Porque em um sistema jurídico complexo, o acusado precisa de alguém que o represente, que entenda as leis e os procedimentos, e que possa construir uma defesa eficaz. O advogado criminal é esse profissional, pronto a enfrentar qualquer desafio para garantir os direitos de seus clientes.
+
+Em resumo, o advogado criminal é:
+
+Um defensor: Protege os direitos de seus clientes.
+Um estrategista: Constrói defesas sólidas e eficazes.
+Um conhecedor das leis: Domina a legislação penal e processual penal.
+Um defensor da justiça: Busca sempre a solução mais justa para cada caso.
+Se você se interessou por essa área do Direito, saiba que a carreira de advogado criminal é desafiadora e gratificante. Exige dedicação, conhecimento técnico e, acima de tudo, um profundo senso de justiça.
+
+Gostaria de saber mais sobre a profissão de advogado criminal? Posso te contar sobre os desafios da profissão, as áreas de atuação ou como se tornar um advogado criminal.
+
+
+
+
+
+
+
+const form = document.querySelector('form');
+const fullName = document.getElementById("name");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+const subject = document.getElementById("subject");
+const message = document.getElementById("message");  
+
+
+function sendEmail() {
+  const bodyMessage = `Nome Completo: ${fullName.value}<br> Email: ${email.value}<br>   
+ Telefone para Contato: ${phone.value}<br> Numero do Processo: ${subject.value}<br> Mensagem: ${message.value}`;
+
+  // Update with your actual email sending logic or library
+  console.log("Sending email:", bodyMessage);
+
+  // Assuming successful sending, display a success message
+  Swal.fire({
+    title: "Parabéns!",
+    text: "Sua Mensagem foi Enviada",
+    icon: "success"
+  });
+}
+
+function areAllFieldsFilled() {
+  const fields = [fullName, email, phone, subject, message];
+  return fields.every(field => field.value !== "");
+}
+
+function checkEmail() {
+  const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+  const errorTxtEmail = email.parentElement.querySelector(".error-txt.email");
+
+  if (!email.value.match(emailRegex)) {
+    email.classList.add("error");
+    email.parentElement.classList.add("error");   
+
+    errorTxtEmail.innerText = "Escreva um Email válido";
+    return false; // Indica que o email é inválido
+  } else {
+    email.classList.remove("error");
+    email.parentElement.classList.remove("error");
+    errorTxtEmail.innerText = "";
+    return true; // Indica que o email é válido
+  }
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Verifica se todos os campos estão preenchidos e se o email é válido
+  if (areAllFieldsFilled() && checkEmail()) {
+    sendEmail();
+    form.reset();
+  }
+});
+
+// Eventos opcionais para fornecer feedback visual imediato
+fullName.addEventListener("keyup", () => {
+  // ... (código para remover a classe "error" se o campo estiver preenchido)
+});
+// ... (eventos similares para outros campos)
